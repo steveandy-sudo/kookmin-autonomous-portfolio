@@ -2,7 +2,7 @@
 
 **2026년 제9회 국민대학교 자율주행 경진대회 · AI-엣지 챌린지**
 
-[English](README.md) · [프로젝트 포트폴리오](https://steveandy-sudo.github.io/projects/kookmin-ai-edge/) · [원본 팀 저장소](https://github.com/steveandy-sudo/kookmin_autonomous_competition_teamKAI)
+[English](README.md) · [프로젝트 포트폴리오](https://steveandy-sudo.github.io/projects/kookmin-ai-edge/)
 
 XYCAR 경진대회 차량을 대상으로 카메라 인지, 주행 판단, 차량 제어, 지도 기반 주차를 개발한 ROS 2 프로젝트입니다. 본 저장소에는 주행 및 주차 관련 패키지를 모으고, 주요 구현과 원본 코드의 출처를 정리했습니다.
 

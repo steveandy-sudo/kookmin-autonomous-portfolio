@@ -2,7 +2,7 @@
 
 **2026 9th Kookmin University Autonomous Driving Competition · AI-Edge Challenge**
 
-[한국어](README.ko.md) · [Project portfolio](https://steveandy-sudo.github.io/projects/kookmin-ai-edge/) · [Original team repository](https://github.com/steveandy-sudo/kookmin_autonomous_competition_teamKAI)
+[한국어](README.ko.md) · [Project portfolio](https://steveandy-sudo.github.io/projects/kookmin-ai-edge/)
 
 This project developed ROS 2 software for an XYCAR competition vehicle, covering camera-based perception, driving decisions, vehicle control, and map-based parking. This repository brings selected driving and parking packages together, with entry points to the implementations and a record of their source versions.
 
