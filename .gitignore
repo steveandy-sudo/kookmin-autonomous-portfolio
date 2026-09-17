@@ -1,0 +1,12 @@
+build/
+install/
+log/
+.pytest_cache/
+__pycache__/
+*.py[cod]
+*.pt
+*.onnx
+*.pth
+*.db3
+*.mcap
+*.bag
