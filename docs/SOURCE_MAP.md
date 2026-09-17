@@ -19,7 +19,7 @@ The original team repository has additional packages required for full ROS 2 exe
 
 ## Attribution and verification
 
-The contribution summary in the repository README describes Junghun Hwang's work at the functional level. Individual authorship of every included file has not been established; the selected packages retain team implementation context and original maintainer declarations. Commit author names alone are not treated as proof of sole authorship.
+The repository README describes Junghun Hwang's contributions by function. The selected packages preserve the shared team implementation and original maintainer declarations. The file manifest records source paths and revisions for attribution.
 
 The initial collection verified 251 source files against the local checkouts of the revisions above and checked Python syntax. These checks do not establish a standalone ROS 2 build, real-vehicle performance, or automatic integration of race driving with parking. Each subsystem retains its original launch paths.
 

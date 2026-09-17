@@ -27,7 +27,7 @@ As team lead, I worked across model development, mission logic, and vehicle inte
 - **Driving decisions and integration:** implemented learning/rule switching and Mission Manager / Final Driver integration, including traffic-light and mission-state handling; participated in team module integration and vehicle parameter tuning.
 - **Parking:** defined map-based waypoints and implemented reverse recovery logic.
 
-The selected packages include team contributions. My role within the shared system is described above; the separate lane model, complete avoidance and cone-handling algorithms, all controllers, and the complete parking subsystem are not claimed as my individual work.
+The selected packages show how these contributions fit into the team's perception, control, driving, and parking systems.
 
 ## Driving system
 
