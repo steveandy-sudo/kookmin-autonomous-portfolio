@@ -31,7 +31,7 @@ The selected packages show how these contributions fit into the team's perceptio
 
 ## Driving system
 
-Development covered both imitation learning and rule-based driving. Steering oscillation remained in the learning-based approach, and the team selected **rule-based driving for the competition**. The learning package documents the development work; its inclusion does not imply use of that model during the final event.
+Development covered both imitation learning and rule-based driving. Steering oscillation remained in the learning-based approach, and the team selected **rule-based driving for the competition**.
 
 | Area | Package | Reading entry points |
 | --- | --- | --- |
@@ -40,6 +40,14 @@ Development covered both imitation learning and rule-based driving. Steering osc
 | Mission and vehicle integration | `xycar_map_nav` | [Integrated driver](src/xycar_map_nav/xycar_map_nav/sequential_hybrid_driver.py) · [Lap policy](src/xycar_map_nav/xycar_map_nav/race_lap_policy.py) · [Drive gate](src/xycar_map_nav/xycar_map_nav/space_drive_gate.py) |
 
 The integrated driving code combines lane following with traffic-light, shortcut, cone, and obstacle-handling logic. The [vehicle startup script](src/xycar_map_nav/scripts/run_complete_space_hybrid.sh) shows how the team modules are connected.
+
+### Learning architecture and evaluation
+
+The canonical-image policy in the source combines a **ResNet18 image encoder and a 1D LiDAR encoder**. Their features feed a regression head that predicts normalized steering. Speed selection, steering limits, smoothing, and sensor-timeout handling are implemented in the surrounding ROS 2 node.
+
+The dataset builder groups recordings by **driving session** before assigning train, validation, and test sets; generated views retain their source session identifier. The offline evaluator reports steering-command MAE and RMSE, together with errors by session and mission label. This makes the intended experiment structure readable alongside the implementation.
+
+See the [learning architecture and evaluation record](docs/EVALUATION.md) for the architecture, code entry points, and the status of the archived experiment artifacts. The [project portfolio](https://steveandy-sudo.github.io/projects/kookmin-ai-edge/) includes competition, parking, practice, and offline object-detection excerpts.
 
 ## Parking system
 
@@ -52,7 +60,7 @@ The parking package covers **Start → reverse parking → parallel parking → 
 | Vehicle command handling | [Command adapter](src/xycar_parking_nav/xycar_parking_nav/cmd_vel_adapter.py) |
 | Setup and operation | [Package documentation](src/xycar_parking_nav/README.md) · [Waypoint driving launch](src/xycar_parking_nav/launch/parking_waypoint_drive.launch.py) |
 
-**Driving and parking are collected in one repository and retain separate launch paths.** An automatic transition from race driving to parking has not been implemented or validated as part of this collection.
+Driving and parking retain separate launch paths, with package-specific mission configuration.
 
 ## Repository structure
 
@@ -63,6 +71,7 @@ src/
 ├── xycar_map_nav/         Driving integration and mission logic
 └── xycar_parking_nav/     Parking mission, waypoints, and command handling
 docs/
+├── EVALUATION.md          Learning architecture, evaluation method, and evidence
 ├── SOURCE_MAP.md          Original branches, commits, and collection scope
 └── SOURCE_MANIFEST.csv    File-level source records and checksums
 ```
@@ -71,6 +80,8 @@ docs/
 
 The packages target ROS 2 Humble. Full execution requires the corresponding team workspace, vehicle drivers, ROS message packages, model weights, and hardware configuration. This repository contains selected source packages; model weights and driving datasets are not included.
 
-For the driving environment, see the [team workspace instructions at the imported revision](https://github.com/steveandy-sudo/kookmin_autonomous_competition_teamKAI/blob/0ae216c6255e25404560948f3e6d5479a7a7ba8f/README.md). For parking, see the [package instructions](src/xycar_parking_nav/README.md). This assembled copy has been checked for source consistency and Python syntax; a standalone ROS 2 build or vehicle run has not been validated here.
+Package setup is documented for [learning](src/il_data_tools/README.md), [driving integration](src/xycar_map_nav/README.md), and [parking](src/xycar_parking_nav/README.md). The [source record](docs/SOURCE_MAP.md) identifies the imported revisions and their workspace context.
+
+**Evidence status:** competition outcomes describe the team event result; the learning package describes an experimental driving approach. The archived model report and model README refer to different checkpoints, so numerical learning-performance claims await a matching checkpoint, dataset split, and run record. The collected source has been checked for source consistency and Python syntax; standalone ROS 2 execution and an automatic race-to-parking transition have not been verified in this assembled copy.
 
 The driving packages come from `main`, and parking comes from `빠킹`. The [source record](docs/SOURCE_MAP.md) identifies the exact revisions and attributes the packages to the original team repository.
