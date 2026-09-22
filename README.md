@@ -82,6 +82,4 @@ The packages target ROS 2 Humble. Full execution requires the corresponding team
 
 Package setup is documented for [learning](src/il_data_tools/README.md), [driving integration](src/xycar_map_nav/README.md), and [parking](src/xycar_parking_nav/README.md). The [source record](docs/SOURCE_MAP.md) identifies the imported revisions and their workspace context.
 
-**Evidence status:** competition outcomes describe the team event result; the learning package describes an experimental driving approach. The archived model report and model README refer to different checkpoints, so numerical learning-performance claims await a matching checkpoint, dataset split, and run record. The collected source has been checked for source consistency and Python syntax; standalone ROS 2 execution and an automatic race-to-parking transition have not been verified in this assembled copy.
-
-The driving packages come from `main`, and parking comes from `빠킹`. The [source record](docs/SOURCE_MAP.md) identifies the exact revisions and attributes the packages to the original team repository.
+**Evidence status:** competition outcomes describe the team event result; the learning package describes an experimental driving approach. The archived model report and model README refer to different checkpoints, so numerical learning-performance claims await a matching checkpoint, dataset split, and run record.
